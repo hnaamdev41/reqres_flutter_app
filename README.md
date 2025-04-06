@@ -1,16 +1,47 @@
-# reqres_flutter_app
+# ReqRes Flutter App
 
-A new Flutter project.
+A Flutter application demonstrating authentication, user management, and state persistence using the ReqRes API.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- **Authentication**
+  - Login and registration with persistent state
+  - Secure storage for authentication tokens
+  - Automatic login on app restart
 
-A few resources to get you started if this is your first Flutter project:
+- **User Management**
+  - View list of users with pagination
+  - Search and filter users by name or email
+  - Create new users
+  - Edit existing users
+  - Delete users with confirmation
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **UI/UX Enhancements**
+  - Form validation
+  - Loading indicators
+  - Error handling with user-friendly messages
+  - Toast notifications for action feedback
+  - Responsive design
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## API Notes
+
+This app uses the ReqRes API (https://reqres.in/) for testing.
+
+For testing purposes:
+- Login: Use email: `eve.holt@reqres.in` and password: `cityslicka`
+- Register: Use email: `eve.holt@reqres.in` and password: `pistol`
+
+Note: The API simulates responses but doesn't persist all changes.
+
+## Setup
+
+1. Clone the repository
+2. Run `flutter pub get` to install dependencies
+3. Run `flutter run` to launch the app
+
+## Technologies Used
+
+- Flutter
+- Provider for state management
+- Flutter Secure Storage for persistence
+- HTTP package for API requests
