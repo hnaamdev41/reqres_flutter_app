@@ -14,11 +14,17 @@ class User {
   });
 
   factory User.fromJson(Map<String, dynamic> json) {
+    // Handle potential type conversions
+    int? id;
+    if (json['id'] != null) {
+      id = json['id'] is String ? int.tryParse(json['id']) : json['id'] as int;
+    }
+    
     return User(
-      id: json['id'],
-      email: json['email'],
-      firstName: json['first_name'],
-      lastName: json['last_name'],
+      id: id,
+      email: json['email'] ?? '',
+      firstName: json['first_name'] ?? '',
+      lastName: json['last_name'] ?? '',
       avatar: json['avatar'],
     );
   }

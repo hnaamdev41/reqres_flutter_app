@@ -75,7 +75,9 @@ class ApiService {
 
     if (response.statusCode == 201) {
       final data = jsonDecode(response.body);
-      return User.fromJson({...user.toJson(), 'id': data['id']});
+      // Ensure id is an integer
+      final id = data['id'] is String ? int.parse(data['id']) : data['id'];
+      return User.fromJson({...user.toJson(), 'id': id});
     } else {
       throw Exception('Failed to create user');
     }
@@ -93,6 +95,18 @@ class ApiService {
     );
 
     if (response.statusCode == 200) {
+      final data = jsonDecode(response.body);
+      // If the API returns updated data, use it; otherwise use the original user data
+      // This ensures we're handling any type conversions from the API correctly
+      if (data != null && data.containsKey('name')) {
+        return User(
+          id: user.id,
+          firstName: user.firstName,
+          lastName: user.lastName,
+          email: user.email,
+          avatar: user.avatar,
+        );
+      }
       return user;
     } else {
       throw Exception('Failed to update user');
