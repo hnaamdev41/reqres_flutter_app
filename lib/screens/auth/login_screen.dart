@@ -56,7 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         labelText: 'Email',
                         prefixIcon: Icon(Icons.email),
                         border: OutlineInputBorder(),
-                        hintText: 'Try: eve.holt@reqres.in',
+                        helperText: 'Try: eve.holt@reqres.in',
                       ),
                       keyboardType: TextInputType.emailAddress,
                       validator: (value) {
@@ -74,7 +74,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       controller: _passwordController,
                       decoration: InputDecoration(
                         labelText: 'Password',
-                        hintText: 'Try: cityslicka',
+                        helperText: 'Try: cityslicka',
                         prefixIcon: const Icon(Icons.lock),
                         suffixIcon: IconButton(
                           icon: Icon(

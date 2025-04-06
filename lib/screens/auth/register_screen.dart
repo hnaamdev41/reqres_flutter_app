@@ -58,7 +58,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         labelText: 'Email',
                         prefixIcon: Icon(Icons.email),
                         border: OutlineInputBorder(),
-                        hintText: 'Try: eve.holt@reqres.in',
+                        helperText: 'Try: eve.holt@reqres.in',
                       ),
                       keyboardType: TextInputType.emailAddress,
                       validator: (value) {
@@ -77,7 +77,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       decoration: InputDecoration(
                         labelText: 'Password',
                         prefixIcon: const Icon(Icons.lock),
-                        hintText: 'Try: pistol',
+                        helperText: 'Try: pistol',
                         suffixIcon: IconButton(
                           icon: Icon(
                             _isPasswordVisible
